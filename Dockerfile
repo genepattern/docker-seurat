@@ -25,6 +25,8 @@ RUN pip install nbtools genepattern-python genepattern-notebook jupyter-wysiwyg 
 RUN conda install -y -c conda-forge jupyter_contrib_nbextensions && \
     jupyter nbextension enable collapsible_headings/main --user
 
+RUN pip install scanpy==1.3.4
+
 USER $NB_USER
 
 # Obsolete instructions below
