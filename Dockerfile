@@ -25,15 +25,15 @@ RUN pip install nbtools genepattern-python genepattern-notebook jupyter-wysiwyg 
 RUN conda install -y -c conda-forge jupyter_contrib_nbextensions && \
     jupyter nbextension enable collapsible_headings/main --user
 
-RUN pip install scanpy==1.3.4
+RUN conda install -y -c bioconda scanpy==1.3.4
 
 USER $NB_USER
 
 # Obsolete instructions below
 # build using this:
-# docker build -t edjuaro/docker-seurat:1.2 .
+# docker build -t edjuaro/docker-seurat:1.3 .
 
 # run using this:
-# docker run --rm -t -p 8888:8888 -e GRANT_SUDO=yes edjuaro/docker-seurat:1.2
+# docker run --rm -t -p 8888:8888 -e GRANT_SUDO=yes edjuaro/docker-seurat:1.3
 # or with
-# docker run -it edjuaro/docker-seurat:1.2 bash
+# docker run -it edjuaro/docker-seurat:1.3 bash
