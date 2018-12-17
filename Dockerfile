@@ -27,6 +27,8 @@ RUN conda install -y -c conda-forge jupyter_contrib_nbextensions && \
 
 RUN conda install -y -c bioconda scanpy==1.3.4
 
+RUN pip install scanorama==0.6.0
+
 USER $NB_USER
 
 # Obsolete instructions below
