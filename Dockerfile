@@ -25,17 +25,15 @@ RUN pip install nbtools genepattern-python genepattern-notebook jupyter-wysiwyg 
 RUN conda install -y -c conda-forge jupyter_contrib_nbextensions && \
     jupyter nbextension enable collapsible_headings/main --user
 
-RUN conda install -y -c bioconda scanpy==1.3.4
+RUN conda install -y -c bioconda scanpy==1.3.4 -n python3.6
 
-RUN pip install scanorama==0.6.0
+RUN pip install scanorama==1.0 --target=/home/jovyan/.ipython
 
 USER $NB_USER
 
 # Obsolete instructions below
 # build using this:
-# docker build -t edjuaro/docker-seurat:1.3 .
+# docker build -t genepattern/gpnb:1.0 .
 
 # run using this:
-# docker run --rm -t -p 8888:8888 -e GRANT_SUDO=yes edjuaro/docker-seurat:1.3
-# or with
-# docker run -it edjuaro/docker-seurat:1.3 bash
+# docker run --rm -t -p 8888:8888 -e GRANT_SUDO=yes genepattern/gpnb:1.0
